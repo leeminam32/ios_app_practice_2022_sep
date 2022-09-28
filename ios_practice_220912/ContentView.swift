@@ -6,11 +6,33 @@
 //
 
 import SwiftUI
+//import UIKit
 
 struct ContentView: View {
+    @State var counter = 0
     var body: some View {
-        Text("Hello, world!" + "\nI'm Minha")
-            .padding()
+        VStack {
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Hello, world!\n")
+            Text("Counter App")
+            Text("\(counter)").font(.largeTitle)
+            HStack {
+                Button(action: plus){
+                    Text("Plus")
+                }
+                Button(action: minus){
+                    Text("Minus")
+                }
+            }
+        }
+    }
+    func plus(){
+        counter = counter + 1
+    }
+    func minus(){
+        counter = counter - 1
     }
 }
 
